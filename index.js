@@ -1,4 +1,20 @@
+const express = require('express')
 const puppeteer = require('puppeteer');
+require("dotenv").config();
+const app = express()
+const PORT = process.env.PORT || 4000;
+const http = require("http").Server(app);
+const path = require("path");
+const fs = require("fs").promises;
+const cors = require("cors");
+const TelegramBot = require('node-telegram-bot-api');
+const { error } = require('console');
+
+const io = require("socket.io")(http);
+
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }));
+app.use(cors({ origin: "*" }));
 
 (async () => {
   // Launch the browser and open a new blank page
