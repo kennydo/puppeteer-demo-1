@@ -6,6 +6,7 @@
   "author": "Kenny Do <me@kenny.do>",
   "license": "MIT",
   "dependencies": {
+    "clipboardy": "^4.0.0",
     "puppeteer": "^22.13.1"
   }
 }
