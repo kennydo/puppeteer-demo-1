@@ -8,6 +8,7 @@
   "dependencies": {
     "clipboardy": "^4.0.0",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "puppeteer": "^22.13.1"
   }
 }
