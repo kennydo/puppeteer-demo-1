@@ -16,7 +16,8 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }));
 app.use(cors({ origin: "*" }));
 
-(async () => {
+
+app.get('/', async function (req, res) {
   // Launch the browser and open a new blank page
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
@@ -45,5 +46,11 @@ app.use(cors({ origin: "*" }));
   console.log('The title of this blog post is "%s".', fullTitle);
 
   await browser.close();
-})();
+
+  return res.send(200, { message: 'ok' });
+});
+
+app.listen(PORT, async () => {
+  console.log(`Example app listening at http://localhost:${PORT}`)
+});
 
